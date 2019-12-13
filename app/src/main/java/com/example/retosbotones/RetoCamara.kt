@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
@@ -63,9 +64,16 @@ class RetoCamara : AppCompatActivity() {
     //ASI PODEMOS CREAR UN RETO PARA MEDIANTE LA FOTO QUE RECOGEMOS
     //PARA ELLO RECORREREMOS BIT A BIT LA FOTO
     //COMO SE PUEDE HACER??
+    
         @SuppressLint("MissingSuperCall")
         override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
             if(requestCode== PHOTO_PERMISSION&&resultCode== Activity.RESULT_OK){
+
+
+                //PORQUE SI SE PONEN !! DETRAS DE DATA FUNCIONAN
+                //EL BITMAP NOS PERMITE ECORRER LOS BITS DE UNA MAGEN Y REALIZAR COMPROBACIONES
+                val bits = data!!.extras!!.get("data") as Bitmap
+
 
             }
         }
