@@ -7,6 +7,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 const val INTERNET_REQUEST = 1
 const val CAMARA_REQUEST = 1
+const val SUMA_REQUEST = 1
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,6 +16,7 @@ class MainActivity : AppCompatActivity() {
 
         btnurl.setOnClickListener{retoInternet()}
         btnCamara.setOnClickListener{retoCamara()}
+        btnOperaciones.setOnClickListener{retoSuma()}
     }
     //METODO QUE LE PERMITE AL BOTON ACTIVARSE; INDICANDOLE QUE LA PULSAARLO
     //DEBE SITUARSE EN LA ACTIVITY CORRESPODIENTE
@@ -31,6 +33,10 @@ class MainActivity : AppCompatActivity() {
 
 
 
+    }
+    fun retoSuma(){
+        val nuevoIntent = Intent(this, retoSuma::class.java)
+        startActivityForResult(nuevoIntent, SUMA_REQUEST)
     }
 
 

@@ -38,4 +38,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/btnurl" />
 
+    <Button
+        android:id="@+id/btnOperaciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="317dp"
+        android:text="Operaciones"
+        app:layout_constraintEnd_toEndOf="@+id/btnurl"
+        app:layout_constraintStart_toStartOf="@+id/btnurl"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
