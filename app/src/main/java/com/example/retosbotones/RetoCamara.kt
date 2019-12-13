@@ -64,7 +64,7 @@ class RetoCamara : AppCompatActivity() {
     //ASI PODEMOS CREAR UN RETO PARA MEDIANTE LA FOTO QUE RECOGEMOS
     //PARA ELLO RECORREREMOS BIT A BIT LA FOTO
     //COMO SE PUEDE HACER??
-    
+
         @SuppressLint("MissingSuperCall")
         override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
             if(requestCode== PHOTO_PERMISSION&&resultCode== Activity.RESULT_OK){
@@ -73,6 +73,28 @@ class RetoCamara : AppCompatActivity() {
                 //PORQUE SI SE PONEN !! DETRAS DE DATA FUNCIONAN
                 //EL BITMAP NOS PERMITE ECORRER LOS BITS DE UNA MAGEN Y REALIZAR COMPROBACIONES
                 val bits = data!!.extras!!.get("data") as Bitmap
+
+
+                //ASIGNACION DE EL BIT MAP A LA IMAGENVIEW
+                imagen.setImageBitmap(bits)
+
+                //ACCEDIENDO A BITS DE LA IMAGEN
+                val imagenPixel = bits.getPixel(bits.width , bits.height)
+
+
+                val rojo = imagenPixel shr 32 and 0xff
+                val azul = imagenPixel and 0xff
+                val verde = imagenPixel shr 16 and 0xff
+
+                if(rojo<100&&azul<60&&verde<60){
+                    toast("Superado")
+
+                    val intentF=1
+
+                    val data = Intent()
+                    data.putExtra("intentF", intentF)
+                    setResult(Activity.RESULT_OK,data)
+                }
 
 
             }

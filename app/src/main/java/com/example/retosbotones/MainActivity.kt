@@ -29,6 +29,8 @@ class MainActivity : AppCompatActivity() {
         val nuevoIntent = Intent( this, RetoCamara::class.java)
         startActivityForResult(nuevoIntent, CAMARA_REQUEST)
 
+
+
     }
 
 
