@@ -23,11 +23,11 @@ class InternetReto : AppCompatActivity() {
 
         //LSITENER PARA LOS BOTONES; ASI REALIZAN FUNCIONES AL SER CLICKEADOS
         btnBuscar.setOnClickListener{RespuestaCorrecta()}
-        btnUrl.setOnClickListener{browse("https://es.wikipedia.org/wiki/Luna")}
+        btnurl.setOnClickListener{browse("https://es.wikipedia.org/wiki/Luna")}
 
 
     }
-
+//METDOO PARA COMPROBAR SI LA RESPUESTA ES O NO CORRECTA
     fun RespuestaCorrecta(){
         if(textoRespuesta.text.toString()=="1737"){
             toast("correcto")

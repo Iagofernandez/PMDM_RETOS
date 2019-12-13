@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">RetosBotones</string>
+    <string name="retos_de_app">Retos de app</string>
+    <string name="internet_reto">Internet reto</string>
 </resources>
